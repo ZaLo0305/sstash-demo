@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SSTASH Burger | Order Online</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <img src="sstash-logo.png" alt="SSTASH Burger Logo" class="nav-logo">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="order.html" class="active">Order Online</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Order Online 🍔</h1>
+    <p>Choose your favorites and place your order for pickup.</p>
+  </header>
+
+  <main>
+    <section id="menu">
+  <h2>Menu</h2>
+  <div class="menu-grid">
+
+    <!-- House Burger -->
+    <div class="menu-item">
+      <img src="sstash-burger.jpeg" alt="House Burger">
+      <h3>House Burger</h3>
+      <p>double | american cheese | slow cooked jalapeños | grilled onions | housemade pickles | mustard</p>
+      <span>$13.00</span>
+      <button onclick="addToOrder('House Burger', 13.00)">Add to Order</button>
+    </div>
+
+    <!-- L.A. Burger -->
+    <div class="menu-item">
+      <img src="sstash-burger.jpeg" alt="L.A. Burger">
+      <h3>L.A. Burger</h3>
+      <p>double | cheddar | house pickles | grilled onions | lettuce | tomato | secret sauce</p>
+      <span>$14.00</span>
+      <button onclick="addToOrder('L.A. Burger', 14.00)">Add to Order</button>
+    </div>
+
+    <!-- Classic Cheeseburger -->
+    <div class="menu-item">
+      <img src="sstash-burger.jpeg" alt="Classic Cheeseburger">
+      <h3>Classic Cheeseburger</h3>
+      <p>single | american cheese | ketchup | mustard | pickles</p>
+      <span>$10.00</span>
+      <button onclick="addToOrder('Classic Cheeseburger', 10.00)">Add to Order</button>
+    </div>
+
+    <!-- You can add more menu items here in the same format -->
+
+  </div>
+</section>
+
+
+    <section id="order">
+      <h2>Your Order 🛒</h2>
+      <ul id="order-list"></ul>
+      <p><strong>Total:</strong> $<span id="total">0.00</span></p>
+
+      <form action="https://formspree.io/f/movnzkvz" method="POST" id="order-form">
+        <input type="hidden" name="order_details" id="hidden-order">
+
+        <label>Name:</label>
+        <input type="text" name="customer_name" required>
+
+        <label>Phone:</label>
+        <input type="tel" name="phone" required>
+
+        <label>Email (optional for confirmation):</label>
+        <input type="email" name="_replyto">
+
+        <label>Pickup Time:</label>
+        <input type="time" name="pickup_time">
+
+        <button type="submit">Place Order</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
