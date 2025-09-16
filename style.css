@@ -104,3 +104,84 @@ body {
 .slide-up { opacity:0; transform:translateY(20px); animation:slideUp 1.5s ease-out forwards; animation-delay:0.5s; }
 @keyframes fadeIn { to{ opacity:1; } }
 @keyframes slideUp { to{ opacity:1; transform:translateY(0); } }
+
+/* Order Section Styling */
+#order {
+  max-width: 400px;       /* keeps it narrow on desktop */
+  margin: 2rem auto;      /* centers it */
+  background: #f9f9f9;    /* subtle gray background */
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+#order h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#order-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+#order-list li {
+  display: flex;
+  justify-content: space-between; /* item on left, price on right */
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+#total {
+  display: block;
+  text-align: right;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
+
+#order-form label {
+  display: block;
+  margin-top: 0.8rem;
+  font-weight: 600;
+}
+
+#order-form input, #order-form button {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+#order-form button {
+  background: black;
+  color: white;
+  border: none;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#order-form button:hover {
+  background: #333;
+}
+
+
+@media (max-width: 500px) {
+  #order {
+    width: 90%;          /* leaves a little margin */
+    padding: 1rem;
+  }
+
+  #order-list li {
+    flex-direction: row; /* keeps item and price on one line */
+    font-size: 0.95rem;
+  }
+
+  #order-form input, #order-form button {
+    font-size: 0.95rem;
+  }
+}
