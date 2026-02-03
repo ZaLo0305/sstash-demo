@@ -33,7 +33,14 @@ function updateOrderDisplay() {
     list.appendChild(li);
   });
 
+  const tax = subtotal * TAX_RATE;
+  const total = subtotal + tax;
+
+  document.getElementById("subtotal").textContent = subtotal.toFixed(2);
+  document.getElementById("tax").textContent = tax.toFixed(2);
   document.getElementById("total").textContent = total.toFixed(2);
+
   document.getElementById("hidden-order").value =
     order.map(o => `${o.item} - $${o.price.toFixed(2)}`).join(", ");
 }
+
