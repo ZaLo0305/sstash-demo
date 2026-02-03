@@ -2,6 +2,16 @@ let order = [];
 let subtotal = 0;
 const TAX_RATE = 0.0825;
 
+const CLOSED_DAYS = [1]; // Monday (0 = Sunday)
+
+const today = new Date().getDay();
+const orderButton = document.querySelector("button[type='submit']");
+
+if (CLOSED_DAYS.includes(today)) {
+  orderButton.disabled = true;
+  orderButton.textContent = "Closed Today";
+}
+
 
 function addToOrder(item, price) {
   order.push({ item, price });
