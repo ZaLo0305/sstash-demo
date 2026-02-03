@@ -1,5 +1,7 @@
 let order = [];
-let total = 0;
+let subtotal = 0;
+const TAX_RATE = 0.0825;
+
 
 function addToOrder(item, price) {
   order.push({ item, price });
