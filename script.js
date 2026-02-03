@@ -44,3 +44,28 @@ function updateOrderDisplay() {
     order.map(o => `${o.item} - $${o.price.toFixed(2)}`).join(", ");
 }
 
+const pickupSelect = document.getElementById("pickup-time");
+
+// Business hours (example)
+const OPEN_HOUR = 11; // 11 AM
+const CLOSE_HOUR = 20; // 8 PM
+
+function generatePickupTimes() {
+  pickupSelect.innerHTML = `<option value="">Select a pickup time</option>`;
+
+  for (let hour = OPEN_HOUR; hour < CLOSE_HOUR; hour++) {
+    for (let min = 0; min < 60; min += 15) {
+      const time = `${hour.toString().padStart(2, "0")}:${min
+        .toString()
+        .padStart(2, "0")}`;
+      const option = document.createElement("option");
+      option.value = time;
+      option.textContent = time;
+      pickupSelect.appendChild(option);
+    }
+  }
+}
+
+generatePickupTimes();
+
+
