@@ -63,7 +63,10 @@
     <section id="order">
       <h2>Your Order 🛒</h2>
       <ul id="order-list"></ul>
+      <p>Subtotal: $<span id="subtotal">0.00</span></p>
+      <p>Tax (estimated): $<span id="tax">0.00</span></p>
       <p><strong>Total:</strong> $<span id="total">0.00</span></p>
+
 
       <form action="https://formspree.io/f/movnzkvz" method="POST" id="order-form">
         <input type="hidden" name="order_details" id="hidden-order">
