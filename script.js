@@ -5,15 +5,16 @@ const TAX_RATE = 0.0825;
 
 function addToOrder(item, price) {
   order.push({ item, price });
-  total += price;
+  subtotal += price;
   updateOrderDisplay();
 }
 
 function removeFromOrder(index) {
-  total -= order[index].price;
+  subtotal -= order[index].price;
   order.splice(index, 1);
   updateOrderDisplay();
 }
+
 
 function updateOrderDisplay() {
   const list = document.getElementById("order-list");
