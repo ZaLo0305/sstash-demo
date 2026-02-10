@@ -74,13 +74,16 @@ if (statusText) {
 }
 
 
-
-
-
 const pickupSelect = document.getElementById("pickup-time");
 const orderButton = document.querySelector("button[type='submit']");
 
+
 function generatePickupTimes() {
+  const asap = document.createElement("option");
+  asap.value = "ASAP";
+  asap.textContent = "ASAP (next available)";
+  pickupSelect.appendChild(asap);
+
   const now = new Date();
   const day = now.getDay();
   const hoursToday = HOURS[day];
